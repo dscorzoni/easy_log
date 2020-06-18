@@ -4,11 +4,11 @@
 
 ## Development Steps
 
-[x] Create basic Flask App.
-[x] Create basic template based on Bulma.
-[ ] Create data base to handle events definition.
-[ ] Create interface for events definition.
-[ ] Create logging function.
-[ ] Add log-in/log-out functionality.
-[ ] Create basic reporting.
-[ ] Create chart-based reporting.
+- [x] Create basic Flask App.
+- [x] Create basic template based on Bulma.
+- [ ] Create data base to handle events definition.
+- [ ] Create interface for events definition.
+- [ ] Create logging function.
+- [ ] Add log-in/log-out functionality.
+- [ ] Create basic reporting.
+- [ ] Create chart-based reporting.
