@@ -8,9 +8,8 @@
 - [x] Create basic template based on Bulma.
 - [X] Create data base to handle events definition.
 - [X] Create page to display current logs.
-- [ ] Create insights page with chart.
+- [X] Create insights page with chart.
+- [ ] Add functionality to chart (basic summary).
+- [ ] Add log-in/log-out functionality.
 - [ ] Create logging function.
 - [ ] Create interface for events definition.
-- [ ] Add log-in/log-out functionality.
-- [ ] Create basic reporting.
-- [ ] Create chart-based reporting.
