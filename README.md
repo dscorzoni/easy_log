@@ -9,7 +9,7 @@
 - [X] Create data base to handle events definition.
 - [X] Create page to display current logs.
 - [X] Create insights page with chart.
-- [ ] Add functionality to chart (basic summary).
+- [X] Add functionality to chart (basic summary).
 - [ ] Add log-in/log-out functionality.
 - [ ] Create logging function.
 - [ ] Create interface for events definition.
