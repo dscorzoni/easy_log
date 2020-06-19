@@ -17,7 +17,7 @@ db = SQLAlchemy(app)
 class Log(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     log_string = db.Column(db.String(100), nullable=False)
-    created_at = db.Column(db.DateTime, default = datetime.now())
+    created_at = db.Column(db.DateTime, default = lambda:datetime.now())
 
 
 
