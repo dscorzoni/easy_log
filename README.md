@@ -6,9 +6,11 @@
 
 - [x] Create basic Flask App.
 - [x] Create basic template based on Bulma.
-- [ ] Create data base to handle events definition.
-- [ ] Create interface for events definition.
+- [X] Create data base to handle events definition.
+- [X] Create page to display current logs.
+- [ ] Create insights page with chart.
 - [ ] Create logging function.
+- [ ] Create interface for events definition.
 - [ ] Add log-in/log-out functionality.
 - [ ] Create basic reporting.
 - [ ] Create chart-based reporting.
