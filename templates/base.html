@@ -23,24 +23,27 @@
 
     <div class="hero-footer">
       <nav class="navbar">
-          <div class="container">
+        <div class="container">
 
-              <div id="navbarMenuHeroA" class="navbar-menu">
-                  <div class="navbar-end">
-                      <a href="{{ url_for('index') }}" class="navbar-item">
-                          Home
-                      </a>
-                      <a href="{{ url_for('log_form') }}" class="navbar-item">
-                        Add Log
-                    </a>
-                    <a href="{{ url_for('current_logs') }}" class="navbar-item">
-                      Show Logs
-                  </a>
-                  </div>
-              </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <a href="{{ url_for('index') }}" class="navbar-item">
+                Home
+              </a>
+              <a href="{{ url_for('log_form') }}" class="navbar-item">
+                Add Log
+              </a>
+              <a href="{{ url_for('current_logs') }}" class="navbar-item">
+                Show Logs
+              </a>
+              <a href="{{ url_for('insights') }}" class="navbar-item">
+                Insights
+              </a>
+            </div>
           </div>
+        </div>
       </nav>
-  </div>
+    </div>
 
   </section>
 

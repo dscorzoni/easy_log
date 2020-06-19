@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">Insights</h1>
+        <h2 class="subtitle">
+            In this page you can see insights extracted from your logs.
+        </h2>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+            integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+
+
+        <div class="columns">
+            <div class="column">
+                <center>Chart 1</center>
+                <div class="chart-container" style="position: relative; height:40vh; width:40vw">
+                    <canvas id="chart_1"></canvas>
+                    <script>
+                        var ctx = document.getElementById('chart_1').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'bar',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                datasets: [{
+                                    label: 'My First dataset',
+                                    backgroundColor: 'rgb(255, 99, 132)',
+                                    borderColor: 'rgb(255, 99, 132)',
+                                    data: [0, 10, 5, 2, 20, 30, 45]
+                                }]
+                            },
+
+                            // Configuration options go here
+                            options: {}
+                        });
+                    </script>
+                </div>
+
+
+
+            </div>
+            <div class="column">
+                <b>Chart 2</b>
+                <div class="chart-container" style="position: relative; height:40vh; width:40vw">
+                    <canvas id="chart_2"></canvas>
+                    <script>
+                        var ctx = document.getElementById('chart_2').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'line',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                datasets: [{
+                                    label: 'My First dataset',
+                                    backgroundColor: 'rgb(255, 99, 132)',
+                                    borderColor: 'rgb(255, 99, 132)',
+                                    data: [0, 10, 5, 2, 20, 30, 45]
+                                }]
+                            },
+
+                            // Configuration options go here
+                            options: {}
+                        });
+                    </script>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+{% endblock %}

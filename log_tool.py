@@ -58,5 +58,11 @@ def current_logs():
     rows = Log.query.all()
     return render_template('current_logs.html', rows = rows)
 
+
+# Insights page
+@app.route('/insights')
+def insights():
+    return render_template('insights.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
