@@ -16,7 +16,7 @@
 
         <div class="columns">
             <div class="column">
-                <center>Chart 1</center>
+                <b>Chart 1 - </b>Log events per time.
                 <div class="chart-container" style="position: relative; height:40vh; width:40vw">
                     <canvas id="chart_1"></canvas>
                     <script>
@@ -27,17 +27,34 @@
 
                             // The data for our dataset
                             data: {
-                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                                datasets: [{
-                                    label: 'My First dataset',
-                                    backgroundColor: 'rgb(255, 99, 132)',
-                                    borderColor: 'rgb(255, 99, 132)',
-                                    data: [0, 10, 5, 2, 20, 30, 45]
-                                }]
-                            },
+                                labels: [
+                                    {% for x in xset %}
+                                    "{{x}}",
+                                    {% endfor %}
+                                ],
+                        datasets: [{
+                            label: 'My First dataset',
+                            backgroundColor: 'rgb(3, 157, 252)',
+                            borderColor: 'rgb(0, 76, 122)',
+                            data: [
+                                {% for y in yset %}
+                                    "{{y}}",
+                        {% endfor %}
+                        ],
+                            }]
+                        },
 
-                            // Configuration options go here
-                            options: {}
+                        // Configuration options go here
+
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        },
                         });
                     </script>
                 </div>
@@ -46,7 +63,7 @@
 
             </div>
             <div class="column">
-                <b>Chart 2</b>
+                <b>Chart 2 - </b>Time series of log events.
                 <div class="chart-container" style="position: relative; height:40vh; width:40vw">
                     <canvas id="chart_2"></canvas>
                     <script>
@@ -57,17 +74,33 @@
 
                             // The data for our dataset
                             data: {
-                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                                datasets: [{
-                                    label: 'My First dataset',
-                                    backgroundColor: 'rgb(255, 99, 132)',
-                                    borderColor: 'rgb(255, 99, 132)',
-                                    data: [0, 10, 5, 2, 20, 30, 45]
+                                labels: [
+                                    {% for x in xset %}
+                                    "{{x}}",
+                                    {% endfor %}
+                                ],
+                        datasets: [{
+                            label: 'My First dataset',
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            data: [
+                                {% for y in yset %}
+                                    "{{y}}",
+                        {% endfor %}
+                        ]
                                 }]
                             },
 
-                            // Configuration options go here
-                            options: {}
+                        // Configuration options go here
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        }
                         });
                     </script>
                 </div>

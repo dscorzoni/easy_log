@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from sql_strings import logs_per_day
 
 
 # App instance
@@ -62,7 +63,17 @@ def current_logs():
 # Insights page
 @app.route('/insights')
 def insights():
-    return render_template('insights.html')
+    
+    results = db.session.execute(logs_per_day())
+    x = []
+    y = []
+    for r in results:
+        x.append(str(r.ca_day))
+        y.append(r.log_count)
+
+    print(x)
+    print(y)
+    return render_template('insights.html', xset = x, yset = y)
 
 if __name__ == '__main__':
     app.run(debug=True)
