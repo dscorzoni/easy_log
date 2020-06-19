@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">Current Logs</h1>
+        <h2 class="subtitle">
+            In this page you can see all logged events.
+        </h2>
+
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>log_string</th>
+                    <th>created_at</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <th>
+                        {{ row.id }}
+                    </th>
+                    <td>{{ row.log_string }}</td>
+                    <td>{{ row.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+{% endblock %}

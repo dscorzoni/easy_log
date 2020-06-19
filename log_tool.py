@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -20,16 +20,25 @@ class Log(db.Model):
 
 
 
+##########
+# Routes #
+##########
 
-# Routes
+# Index Route
 @app.route('/')
 def index():
-    return render_template("base.html")
+    return render_template('base.html')
 
+
+
+# Log Form
 @app.route('/log_form/')
 def log_form():
-    return render_template("log_form.html")
+    return render_template('log_form.html')
 
+
+
+# Log Action
 @app.route('/log_action', methods=['POST'])
 def log_action():
     log_string = request.form['log_string']
@@ -39,7 +48,15 @@ def log_action():
     db.session.add(row)
     db.session.commit()
 
-    return 'Added to database: ' + log_string
+    return redirect(url_for('current_logs'))
+
+
+
+# Show current logs
+@app.route('/current_logs')
+def current_logs():
+    rows = Log.query.all()
+    return render_template('current_logs.html', rows = rows)
 
 if __name__ == '__main__':
     app.run(debug=True)
