@@ -30,8 +30,11 @@
               <a href="{{ url_for('index') }}" class="navbar-item">
                 Home
               </a>
+              <a href="{{ url_for('login') }}" class="navbar-item">
+                Login
+              </a>
               <a href="{{ url_for('log_form') }}" class="navbar-item">
-                Add Log
+                Log Event
               </a>
               <a href="{{ url_for('current_logs') }}" class="navbar-item">
                 Show Logs
@@ -39,6 +42,10 @@
               <a href="{{ url_for('insights') }}" class="navbar-item">
                 Insights
               </a>
+              <a href="{{ url_for('logout') }}" class="navbar-item">
+                Logout
+              </a>
+
             </div>
           </div>
         </div>

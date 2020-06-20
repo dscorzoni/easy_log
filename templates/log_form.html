@@ -8,7 +8,7 @@
                 In this page you can submit your log string.
             </h2>
             <section class="section">
-                <form class="form-signin" method="post" action="/log_action">
+                <form class="form-signin" method="post" action="{{ url_for('log_action') }}">
 
                     <div class="field">
                         <label class="label">Logger string</label>

@@ -10,6 +10,7 @@
 - [X] Create page to display current logs.
 - [X] Create insights page with chart.
 - [X] Add functionality to chart (basic summary).
-- [ ] Add log-in/log-out functionality.
+- [X] Add log-in/log-out functionality.
+- [ ] Add username to log events in the database.
 - [ ] Create logging function.
 - [ ] Create interface for events definition.
