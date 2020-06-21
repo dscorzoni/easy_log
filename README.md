@@ -1,6 +1,6 @@
-# Log Tool
+# Easylog
 
-**Log Tool** is a Python application to make logging events easier in your application. It also includes events management and Analytics tools.
+**Easylog** is a Python application to make logging events easier in your application. It also includes events management and Analytics tools.
 
 ## Development Steps
 

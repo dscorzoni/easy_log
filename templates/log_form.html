@@ -3,22 +3,22 @@
 {% block content %}
     <section class="section">
         <div class="container">
-            <h1 class="title">Add Log</h1>
+            <h1 class="title">Add event log</h1>
             <h2 class="subtitle">
-                In this page you can submit your log string.
+                In this page you can submit your event log string.
             </h2>
             <section class="section">
                 <form class="form-signin" method="post" action="{{ url_for('log_action') }}">
 
                     <div class="field">
-                        <label class="label">Logger string</label>
+                        <label class="label">Event log string</label>
                         <div class="control">
                             <input class="input" type="text" name="log_string" placeholder="log string">
                         </div>
                     </div>
                     <div class="field is-grouped">
                         <div class="control">
-                            <button class="button is-link" type="submit">Submit</button>
+                            <button class="button is-link" type="submit">Log!</button>
                         </div>
                 </form>
 
