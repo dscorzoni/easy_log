@@ -91,7 +91,7 @@ def insights():
     x = []
     y = []
     for r in results:
-        x.append(str(r.ca_day))
+        x.append(str(r.log_string))
         y.append(r.log_count)
 
     print(x)

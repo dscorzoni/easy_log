@@ -3,9 +3,10 @@
 def logs_per_day():
     strSQL = """
     SELECT 
-        strftime('%H:%M', created_at) AS ca_day,
+        log_string AS log_string,
         COUNT(1) AS log_count
     FROM log
     GROUP BY 1
+    ORDER BY log_count DESC
     """
     return strSQL
