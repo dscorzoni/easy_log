@@ -100,7 +100,7 @@ def insights():
 @app.route('/login')
 def login():
 
-    return render_template('login_form.html', current_user = current_user)
+    return render_template('login_form.html')
 
 # Authenticate
 @app.route('/app_authenticate', methods=['POST'])
