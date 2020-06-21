@@ -1,30 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section class="section">
-        <div class="container">
-            <h1 class="title">Add event log</h1>
-            <h2 class="subtitle">
-                In this page you can submit your event log string.
-            </h2>
-            <section class="section">
-                <form class="form-signin" method="post" action="{{ url_for('log_action') }}">
+<section class="section">
+    <div class="container">
+        <h1 class="title">Add event log</h1>
+        <h2 class="subtitle">
+            In this page you can submit your event log string.
+        </h2>
+        <section class="section">
+            <form class="form-signin" method="post" action="{{ url_for('log_action') }}">
 
-                    <div class="field">
-                        <label class="label">Event log string</label>
-                        <div class="control">
-                            <input class="input" type="text" name="log_string" placeholder="log string">
-                        </div>
+                <div class="field">
+                    <label class="label">Event log string</label>
+                    <div class="control">
+                        <input class="input" type="text" name="log_string" id="logInput">
                     </div>
-                    <div class="field is-grouped">
-                        <div class="control">
-                            <button class="button is-link" type="submit">Log!</button>
-                        </div>
-                </form>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link" type="submit" id="log">Log!</button>
+                    </div>
+            </form>
 
-            </section>
-        </div>
-    </section>
+        </section>
+    </div>
+</section>
 
-    
+<script>
+    var log_it = function (log_it) {
+        $.ajax({
+            type: "POST",
+            url: "{{url_for('log_event')}}",
+            contentType: 'application/json',
+            data: JSON.stringify({ "log_string": log_it }),
+            error: function (error) { alert(error); }
+        });
+    }
+
+    // Logging events:
+    $(document).ready(function () {
+        log_it("load_page_add_event");
+        $('#logInput').click(function () { log_it("input_focus") });
+        $('#log').click(function() {log_it("button_click")});
+    });
+
+
+
+</script>
+
 {% endblock %}

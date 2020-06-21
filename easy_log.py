@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for
+import json
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from datetime import datetime
@@ -12,9 +13,9 @@ app.config['SECRET_KEY'] = 'aklsdjlaksjdlaksjdlaskjdoiqueqzxzcmnz'
 
 
 
-########################
-# Data Model and Login #
-########################
+#######################################
+# DATA MODEL AND LOGIN MANAGER CONFIG #
+#######################################
 
 db = SQLAlchemy(app)
 
@@ -40,13 +41,13 @@ def load_user(user_id):
 
 
 ##########
-# Routes #
+# ROUTES #
 ##########
 
 # Index Route
 @app.route('/')
 def index():
-    return render_template('base.html')
+    return render_template('index.html')
 
 
 
@@ -97,6 +98,22 @@ def insights():
     print(y)
     return render_template('insights.html', xset = x, yset = y)
 
+# Log event web function
+@app.route('/log_event', methods=['POST'])
+@login_required
+def log_event():
+    data = request.get_json()
+    event = Log(log_string = data['log_string'], user_id = current_user.id)
+    db.session.add(event)
+    db.session.commit()
+
+    return jsonify({'success': True})
+
+
+
+################
+# LOGIN ROUTES #
+################
 
 # Login form
 @app.route('/login')

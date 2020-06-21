@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+{% if current_user.id %}
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "{{url_for('log_event')}}",
+            contentType: 'application/json',
+            data: JSON.stringify({ "log_string": "page_index_load" }),
+            error: function (error) { alert(error); }
+        });
+    });
+</script>
+{% endif %}
+
+{% endblock %}
