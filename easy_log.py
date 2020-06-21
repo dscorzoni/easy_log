@@ -12,15 +12,16 @@ app.config['SECRET_KEY'] = 'aklsdjlaksjdlaksjdlaskjdoiqueqzxzcmnz'
 
 
 
-# Data Model
+########################
+# Data Model and Login #
+########################
+
 db = SQLAlchemy(app)
 
 class Log(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     log_string = db.Column(db.String(100), nullable=False)
     created_at = db.Column(db.DateTime, default = lambda:datetime.now())
-
-
 
 
 # User Login
@@ -121,7 +122,9 @@ def logout():
     logout_user()
     return render_template('login_form.html', err_message='You are now logged out!')
 
+#################
+# Start the App #
+#################
 
-# Start the App
 if __name__ == '__main__':
     app.run(debug=True)

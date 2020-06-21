@@ -1,43 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section class="section">
-        <div class="container">
-            <h1 class="title">Login</h1>
-            <h2 class="subtitle">
-                {% if current_user.username %}
-                You're logged-in {{ current_user.username }}.
-                {% else %}
-                Type the user name to login into the system.
-                {% endif %}
-            </h2>
-            <section class="section">
-                {% if not current_user.username %}
-                {% if err_message %}
-                <article class="message is-danger">
-                    <div class="message-body">
-                      {{err_message}}
-                    </div>
-                  </article>
-                  {% endif %}
-                <form class="form-signin" method="post" action="{{ url_for('app_authenticate') }}">
-                
-                    <div class="field">
-                        <label class="label">Username</label>
-                        <div class="control">
-                            <input class="input" type="text" name="username" placeholder="username">
-                        </div>
-                    </div>
-                    <div class="field is-grouped">
-                        <div class="control">
-                            <button class="button is-link" type="submit">Submit</button>
-                        </div>
-                </form>
-                {% endif %}
+<section class="section">
+    <div class="container">
+        <h1 class="title">Login</h1>
+        <h2 class="subtitle">
+            {% if current_user.username %}
+            You're logged-in {{ current_user.username }}.
+            {% else %}
+            Type the user name to login into the system.
+            {% endif %}
+        </h2>
+        <section class="section">
+            {% if not current_user.username %}
+            {% if err_message %}
+            <article class="message is-danger">
+                <div class="message-body">
+                    {{err_message}}
+                </div>
+            </article>
+            {% endif %}
 
-            </section>
-        </div>
-    </section>
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    <form class="box" method="post" action="{{ url_for('app_authenticate') }}">
 
-    
+                        <div class="field">
+                            <label class="label">Username</label>
+                            <div class="control">
+                                <input class="input" type="text" name="username" placeholder="username">
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link" type="submit">Submit</button>
+                            </div>
+                    </form>
+                </div>
+
+            </div>
+            {% endif %}
+
+        </section>
+    </div>
+</section>
+
+
 {% endblock %}
