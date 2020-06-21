@@ -44,7 +44,7 @@
               <a href="{{ url_for('insights') }}" class="navbar-item">
                 Insights
               </a>
-              <a href="{{ url_for('logout') }}" class="navbar-item">
+              <a href="{{ url_for('logout') }}" class="navbar-item" id="logout">
                 Logout
               </a>
               {% endif %}
@@ -69,6 +69,21 @@
     </div>
   </footer>
 
+
+  <script>
+    $(document).ready(function () {
+      $("#logout").click(function () {
+        $.ajax({
+          type: "POST",
+          url: "{{url_for('log_event')}}",
+          contentType: 'application/json',
+          data: JSON.stringify({ "log_string": "logout_click" }),
+          error: function (error) { alert(error); }
+        });
+      });
+
+    });
+  </script>
 
 
 

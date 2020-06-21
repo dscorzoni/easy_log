@@ -45,5 +45,21 @@
     </div>
 </section>
 
+{% if current_user.username %}
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "{{url_for('log_event')}}",
+            contentType: 'application/json',
+            data: JSON.stringify({ "log_string": "load_page_login" }),
+            error: function (error) { alert(error); }
+        });
+
+    });
+</script>
+
+{% endif %}
+
 
 {% endblock %}

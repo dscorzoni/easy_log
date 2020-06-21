@@ -11,7 +11,7 @@
             type: "POST",
             url: "{{url_for('log_event')}}",
             contentType: 'application/json',
-            data: JSON.stringify({ "log_string": "page_index_load" }),
+            data: JSON.stringify({ "log_string": "load_page_index" }),
             error: function (error) { alert(error); }
         });
     });

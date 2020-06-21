@@ -119,10 +119,11 @@
             type: "POST",
             url: "{{url_for('log_event')}}",
             contentType: 'application/json',
-            data: JSON.stringify({ "log_string": "page_insights_load" }),
+            data: JSON.stringify({ "log_string": "load_page_insights" }),
             error: function (error) { alert(error); }
         });
     });
 </script>
+
 
 {% endblock %}
