@@ -12,11 +12,11 @@
 - [X] Add functionality to chart (basic summary).
 - [X] Add log-in/log-out functionality.
 - [X] Add username to log events in the database.
-- [ ] Create logging class.
-- [ ] Implement a form to log different events in html (ajax).
-- [ ] Log page_load
-- [ ] Log button_click
-- [ ] Log mouse_over
+- [X] Create logging route.
+- [X] Implement a form to log different events in html (ajax).
+- [X] Log page_load
+- [X] Log button_click
+- [X] Log focus
 - [ ] Log page_exit
 - [ ] Create a report to count different events.
 - [ ] Create a report to track time_spent.
