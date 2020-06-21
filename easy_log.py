@@ -7,7 +7,7 @@ from sql_strings import logs_per_day
 
 # App instance
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///log_db.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///easylog_database.sqlite3'
 app.config['SECRET_KEY'] = 'aklsdjlaksjdlaksjdlaskjdoiqueqzxzcmnz'
 
 
@@ -22,6 +22,7 @@ class Log(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     log_string = db.Column(db.String(100), nullable=False)
     created_at = db.Column(db.DateTime, default = lambda:datetime.now())
+    user_id = db.Column(db.Integer)
 
 
 # User Login
@@ -64,7 +65,7 @@ def log_action():
     log_string = request.form['log_string']
 
     # Adding to the database
-    row = Log(log_string = log_string)
+    row = Log(log_string = log_string, user_id = current_user.id)
     db.session.add(row)
     db.session.commit()
 

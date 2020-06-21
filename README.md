@@ -11,7 +11,13 @@
 - [X] Create insights page with chart.
 - [X] Add functionality to chart (basic summary).
 - [X] Add log-in/log-out functionality.
-- [X] Adding structure to app, separting files.
-- [ ] Add username to log events in the database.
-- [ ] Create logging function.
-- [ ] Create interface for events definition.
+- [X] Add username to log events in the database.
+- [ ] Create logging class.
+- [ ] Implement a form to log different events in html (ajax).
+- [ ] Log page_load
+- [ ] Log button_click
+- [ ] Log mouse_over
+- [ ] Log page_exit
+- [ ] Create a report to count different events.
+- [ ] Create a report to track time_spent.
+

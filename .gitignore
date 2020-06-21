@@ -1,2 +1,3 @@
 __pycache__/
 log_db.db
+easylog_database.sqlite3
