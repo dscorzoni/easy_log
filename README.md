@@ -17,7 +17,7 @@
 - [X] Log page_load
 - [X] Log button_click
 - [X] Log focus
-- [ ] Log page_exit
+- [X] Log page_exit
 - [ ] Create a report to count different events.
 - [ ] Create a report to track time_spent.
 

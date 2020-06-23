@@ -44,6 +44,15 @@
             data: JSON.stringify({ "log_string": "load_page_current_logs" }),
             error: function (error) { alert(error); }
         });
+        $(window).bind('beforeunload', function () {
+            $.ajax({
+                type: "POST",
+                url: "{{url_for('log_event')}}",
+                contentType: 'application/json',
+                data: JSON.stringify({ "log_string": "exit_page_current_logs" }),
+                error: function (error) { alert(error); }
+            });
+        });
     });
 </script>
 

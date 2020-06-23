@@ -41,7 +41,10 @@
     $(document).ready(function () {
         log_it("load_page_add_event");
         $('#logInput').click(function () { log_it("input_focus") });
-        $('#log').click(function() {log_it("button_click")});
+        $('#log').click(function () { log_it("button_click") });
+        $(window).bind('beforeunload', function () {
+            log_it('exit_page_add_event');
+        });
     });
 
 
